@@ -5,9 +5,9 @@ from sqlalchemy.orm import mapped_column, Mapped
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from src.modulos import db
-from src.models.mixin import DataMixin
+from src.models.mixin import DataModelMixin
 
-class User(db.Model, DataMixin):
+class User(db.Model, DataModelMixin):
     __tablename__ = 'usuarios'
 
     id: Mapped[Uuid] = mapped_column(Uuid(as_uuid=True), primary_key=True, default=uuid.uuid4)
